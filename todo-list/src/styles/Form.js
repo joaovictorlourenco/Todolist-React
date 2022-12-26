@@ -67,8 +67,8 @@ export const SubmitStyle = styled.div`
     }
     button:hover{
 
-        filter: brightness(1.3);
-        transition: 250ms;
+        filter: brightness(1.2);
+        transition: 1000ms;
 
     }
     input{

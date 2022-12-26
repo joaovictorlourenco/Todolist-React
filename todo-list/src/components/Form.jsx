@@ -4,41 +4,20 @@ import List from "./List";
 
 export default function Form(){
 
-    const [task, setTask] = useState("");
-    const [itemsList, setItemsList] = useState([]);
-    const [id, setId] = useState(0);
-
-    function handleAddItemToList(event) {
-        event.preventDefault(); 
-        console.log(event.value);
-        const inputTask = { value: inputValue, id: id};
-
-        // setId(id + 1);
-        // setTask(inputTask); 
-
-        console.log(inputTask);
-        // if (!!task) {
-        //     setItemsList([...itemsList, task]);
-        //     setTask("");
-        // }
-
-    }
-     
-
     return(
         <General>
             <h2>My Tasks</h2>
             <Title>
-                <form onSubmit={handleAddItemToList}>
+                <form>
                     <SubmitStyle>     
-                        <input placeholder="Adicione uma tarefa" value={task} type="text"/>
+                        <input placeholder="Adicione uma tarefa" type="text"/>
                         <button type="submit">ADD</button>
                     </SubmitStyle>
                 </form>
             </Title>
 
             <ListStyle>
-                <List List={itemsList} />
+                <List />
             </ListStyle>
         </General>
     )

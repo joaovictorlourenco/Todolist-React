@@ -1,23 +1,28 @@
 import React from 'react';
 import { ListActions, ListStyle } from '../styles/List'
-import { MdDelete, MdEdit } from "react-icons/md";
+import { FaTrashAlt } from "react-icons/fa";
 
 const List = (props) => {
     return (
         <div>
             <ul className="todo-list">
-                {props.List.map((item, index) => ( 
                     <ListStyle>
-                        <li key={index}>
-                            <p>{item}</p>
-                            <ListActions>
-                                <input type="checkbox" name="feito" id="feito" />
-                            <MdDelete/>
-                            <MdEdit/>
+                        <li>
+                            <ListActions  primary >
+                                <label htmlFor='feito' >
+                                    <input className='checkmark' type="checkbox" name="feito" />
+                                </label>
+                            </ListActions>
+                            
+                            <p>Teste</p>
+                            <ListActions >
+                                <div className='icon'>
+                                 
+                                    <FaTrashAlt/>
+                                </div>
                             </ListActions>
                         </li>
                     </ListStyle>
-                    ))}
             </ul>
         </div>
     );
