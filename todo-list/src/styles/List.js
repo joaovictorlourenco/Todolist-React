@@ -89,6 +89,7 @@ export const ListActions = styled.div`
         align-items: center;
         height: 1.4rem;
 
+
     }
 
 
@@ -96,7 +97,6 @@ export const ListActions = styled.div`
 
 
         height: 1.5rem;
-        margin: 0.4rem;
         color: #EFF5F5;
         cursor: pointer;
 
@@ -116,7 +116,7 @@ export const ListStyle = styled.div `
     flex-direction: center;
     align-items: center;
     list-style: none;
-    color: #EFF5F5;
+    color: #497174;
 
 
     min-width: 400px; 
@@ -127,7 +127,7 @@ export const ListStyle = styled.div `
     font-size: 30px;
     margin: 1rem;
     
-    background-color: #8CBCBF;
+    background-color: #c0c5c5;
 
     li{
 

@@ -1,24 +1,37 @@
-import React, { useState } from "react"
-import { Title, ListStyle, General, SubmitStyle } from '../styles/Form'
-import List from "./List";
+import React, { useState } from "react";
+import { SubmitStyle } from '../styles/Form'
 
-export default function Form(){
+function Form(props){
 
-    return(
-        <General>
-            <h2>My Tasks</h2>
-            <Title>
-                <form>
-                    <SubmitStyle>     
-                        <input placeholder="Adicione uma tarefa" type="text"/>
-                        <button type="submit">ADD</button>
-                    </SubmitStyle>
-                </form>
-            </Title>
+    const [input, setInput] = useState('');
 
-            <ListStyle>
-                <List />
-            </ListStyle>
-        </General>
-    )
+    const handleChange = e => {
+
+        setInput(e.target.value);
+
+    }
+
+    const handleSubmit = e => {
+        e.preventDefault();
+
+        props.onSubmit({
+            id: Math.floor(Math.random() * 10000),
+            text: input
+        });
+
+        setInput('');
+      
+    }
+
+return(
+    <form onSubmit={handleSubmit}>
+        <SubmitStyle>     
+            <input placeholder="Adicione uma tarefa" type="text" value={input} onChange={handleChange} />
+            <button type="submit">ADD</button>
+        </SubmitStyle>
+    </form>
+);
+
 }
+
+export default Form

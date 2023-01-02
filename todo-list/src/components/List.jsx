@@ -1,31 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ListActions, ListStyle } from '../styles/List'
-import { FaTrashAlt } from "react-icons/fa";
+import { FaTrashAlt, FaEdit } from "react-icons/fa";
 
-const List = (props) => {
-    return (
-        <div>
+const List = ({todos, completeTodo, removeTodo}) => {
+
+    const [edit, setEdit] = useState({
+
+        id: null,
+        value: ''
+
+    })
+
+    return todos.map((todo , index) => (
+        <div key={index}>
             <ul className="todo-list">
-                    <ListStyle>
+                    <ListStyle  className={todo.isComplete ? 'complete' : 'no-complete'} >
                         <li>
-                            <ListActions  primary >
+                            <ListActions primary >
                                 <label htmlFor='feito' >
-                                    <input className='checkmark' type="checkbox" name="feito" />
+                                    <input
+                                      className='checkmark'
+                                      type="checkbox" 
+                                      name="feito"
+                                    />
                                 </label>
                             </ListActions>
-                            
-                            <p>Teste</p>
+                            <p>{todo.text}</p>
                             <ListActions >
                                 <div className='icon'>
-                                 
-                                    <FaTrashAlt/>
+                                    <FaEdit onClick={() => setEdit({id:todo.id, value: todo.text})}/>
+                                    <FaTrashAlt onClick={() => removeTodo(todo.id)}/>
                                 </div>
                             </ListActions>
                         </li>
                     </ListStyle>
             </ul>
         </div>
-    );
+    ));
 }
 
 export default List;

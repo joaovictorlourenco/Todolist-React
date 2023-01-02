@@ -1,5 +1,5 @@
-import Form from './components/Form'
 import { createGlobalStyle } from 'styled-components'
+import Home from './components/Home'
 
 
 const GlobalStyle = createGlobalStyle`
@@ -24,7 +24,7 @@ function App() {
   return (
     <div>
       <GlobalStyle/>
-      <Form/>
+      <Home/>
     </div>
   )
 }
