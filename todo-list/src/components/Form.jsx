@@ -1,7 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useEffect , useRef } from "react";
 import { SubmitStyle } from '../styles/Form'
 
 function Form(props){
+
+    const inputRef = useRef(null);
+
+    useEffect(()=> {
+
+        inputRef.current.focus();
+
+    })
 
     const [input, setInput] = useState('');
 
@@ -26,7 +34,7 @@ function Form(props){
 return(
     <form onSubmit={handleSubmit}>
         <SubmitStyle>     
-            <input placeholder="Adicione uma tarefa" type="text" value={input} onChange={handleChange} />
+            <input placeholder="Adicione uma tarefa" type="text" value={input} onChange={handleChange} ref={inputRef} />
             <button type="submit">ADD</button>
         </SubmitStyle>
     </form>
