@@ -7,6 +7,7 @@ export const General = styled.div`
     align-items: center;
     flex-direction: column;
     height: 100%;
+    width: 100%;
     margin-top: 10rem;
     gap: 2rem;
 
@@ -28,6 +29,7 @@ export const Title = styled.div`
     color: #497174;
 
 `;
+
 
 export const backgroundModal = styled.div`
 
@@ -65,6 +67,7 @@ export const SubmitStyle = styled.div`
         font-size: 18px;
 
     }
+    
     button:hover{
 
         filter: brightness(1.2);

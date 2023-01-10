@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ListActions, ListStyle } from '../styles/List'
+import { ListActions, ListStyle, EditForm } from '../styles/List'
 import { FaTrashAlt, FaEdit } from "react-icons/fa";
 import Form from './Form';
 
@@ -23,25 +23,30 @@ const List = ({todos, completeTodo, removeTodo, updatedTodo}) => {
     };
 
     if(edit.id){
-
-        return <Form edit={edit} onSubmit={submitUpdate}/>
+        console.log(edit)
+        return(
+            <EditForm>
+                <h3>Modificando: {edit.value}</h3>
+                <Form edit={edit} onSubmit={submitUpdate} editButton={true} />
+            </EditForm>
+        )
 
     }
 
     return todos.map((todo , index) => (
         <div key={index}>
             <ul className="todo-list">
-                    <ListStyle>
-                        <li>
-                            <p>{todo.text}</p>
-                            <ListActions >
-                                <div className='icon'>
-                                    <FaEdit onClick={() => setEdit({id:todo.id, value: todo.text})}/>
-                                    <FaTrashAlt onClick={() => removeTodo(todo.id)}/>
-                                </div>
-                            </ListActions>
-                        </li>
-                    </ListStyle>
+                <ListStyle>
+                    <li>
+                        <p>{todo.text}</p>
+                        <ListActions >
+                            <div className='icon'>
+                                <FaEdit onClick={() => setEdit({id:todo.id, value: todo.text})}/>
+                                <FaTrashAlt onClick={() => removeTodo(todo.id)}/>
+                            </div>
+                        </ListActions>
+                    </li>
+                </ListStyle>
             </ul>
         </div>
     ));

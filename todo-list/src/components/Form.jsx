@@ -10,7 +10,7 @@ function Form(props){
         inputRef.current.focus();
 
     })
-
+    
     const [input, setInput] = useState('');
 
     const handleChange = e => {

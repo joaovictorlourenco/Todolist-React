@@ -48,6 +48,29 @@ export const ListActions = styled.div`
 
 `;
 
+export const EditForm = styled.div`
+
+
+    width: 500px;
+    height: 200px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    gap: 1rem;
+    background-color: #507C80;
+
+    h3{
+
+        margin: 1rem;
+        color: #EFF5F5;
+        font-size: 30px;
+
+    }
+
+`;
+
 export const ListStyle = styled.div `
 
     display: flex;

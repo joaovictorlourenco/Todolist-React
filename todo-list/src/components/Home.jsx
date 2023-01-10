@@ -1,5 +1,6 @@
 import React, { useState } from "react"
 import { Title, ListStyle, General } from '../styles/Form'
+
 import List from "./List";
 import Form from "./Form";
 
@@ -59,7 +60,7 @@ export default function Home(){
             </Title>
 
             <ListStyle>
-                <List todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} updatedTodo={updatedTodo}/>
+            <List todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} updatedTodo={updatedTodo}/>
             </ListStyle>
         </General>
     );
