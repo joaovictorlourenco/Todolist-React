@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
-import { ListActions, ListStyle, EditForm } from '../styles/List'
+import { ListActions, ListStyle, EditForm, ListGeneral} from '../styles/List'
 import { FaTrashAlt, FaEdit } from "react-icons/fa";
 import Form from './Form';
 
-const List = ({todos, completeTodo, removeTodo, updatedTodo}) => {
+const List = ({todos, removeTodo, updatedTodo}) => {
+
+    const [complete, SetComplete] = useState(false);
 
     const [edit, setEdit] = useState({
 
@@ -23,7 +25,6 @@ const List = ({todos, completeTodo, removeTodo, updatedTodo}) => {
     };
 
     if(edit.id){
-        console.log(edit)
         return(
             <EditForm>
                 <h3>Modificando: {edit.value}</h3>
@@ -35,11 +36,11 @@ const List = ({todos, completeTodo, removeTodo, updatedTodo}) => {
 
     return todos.map((todo , index) => (
         <div key={index}>
-            <ul className="todo-list">
-                <ListStyle>
+            <ListGeneral>
+                <ListStyle >
                     <li>
                         <p>{todo.text}</p>
-                        <ListActions >
+                        <ListActions>
                             <div className='icon'>
                                 <FaEdit onClick={() => setEdit({id:todo.id, value: todo.text})}/>
                                 <FaTrashAlt onClick={() => removeTodo(todo.id)}/>
@@ -47,7 +48,7 @@ const List = ({todos, completeTodo, removeTodo, updatedTodo}) => {
                         </ListActions>
                     </li>
                 </ListStyle>
-            </ul>
+            </ListGeneral>
         </div>
     ));
 }

@@ -39,19 +39,6 @@ export default function Home(){
 
   }
 
-  const completeTodo = id => {
-
-    let updatedTodos = todos.map(todo => {
-        if(todo.id === id){
-
-            todo.isComplete = !todo.isComplete;
-
-        }
-        return todo;
-    });
-    setTodos(updatedTodos);
-  }
-
     return(
         <General>
             <h2>My Tasks</h2>
@@ -60,7 +47,7 @@ export default function Home(){
             </Title>
 
             <ListStyle>
-            <List todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} updatedTodo={updatedTodo}/>
+              <List todos={todos} removeTodo={removeTodo} updatedTodo={updatedTodo}/>
             </ListStyle>
         </General>
     );

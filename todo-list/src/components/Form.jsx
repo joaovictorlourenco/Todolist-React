@@ -2,7 +2,6 @@ import React, { useState, useEffect , useRef } from "react";
 import { SubmitStyle } from '../styles/Form'
 
 function Form(props){
-
     const inputRef = useRef(null);
 
     useEffect(()=> {
@@ -33,7 +32,7 @@ function Form(props){
 
 return(
     <form onSubmit={handleSubmit}>
-        <SubmitStyle>     
+        <SubmitStyle edit={props.editButton}>     
             <input placeholder="Adicione uma tarefa" type="text" value={input} onChange={handleChange} ref={inputRef} />
             <button type="submit">ADD</button>
         </SubmitStyle>

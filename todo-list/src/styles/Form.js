@@ -57,7 +57,7 @@ export const SubmitStyle = styled.div`
     button{
 
         color: #EFF5F5;
-        background-color: #EB6440;
+        background-color: ${ props => props.edit ? "#34BDEB" : "#EB6440" };
         width: 5rem;
         height: 4rem;
         border-top-right-radius: 7px;

@@ -1,6 +1,16 @@
 import styled from "styled-components";
 
 
+export const ListGeneral = styled.ul`
+
+    .task-container-complete{
+
+        background-color: #C0C5C5;
+    }
+
+
+`;
+
 export const ListActions = styled.div`
 
 
@@ -59,7 +69,7 @@ export const EditForm = styled.div`
     flex-direction: column;
     border-radius: 10px;
     gap: 1rem;
-    background-color: #507C80;
+    background-color: #B1B5B5;
 
     h3{
 
