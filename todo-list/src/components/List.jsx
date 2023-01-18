@@ -3,9 +3,9 @@ import { ListActions, ListStyle, EditForm, ListGeneral} from '../styles/List'
 import { FaTrashAlt, FaEdit } from "react-icons/fa";
 import Form from './Form';
 
-const List = ({todos, removeTodo, updatedTodo}) => {
+const List = ({todos, removeTodo, updatedTodo, completeTodo}) => {
 
-    const [complete, SetComplete] = useState(false);
+    
 
     const [edit, setEdit] = useState({
 
@@ -41,6 +41,7 @@ const List = ({todos, removeTodo, updatedTodo}) => {
                     <li>
                         <p>{todo.text}</p>
                         <ListActions>
+                            {/* colocar um icon de completed usando a função todo.id https://www.youtube.com/watch?v=36a__1Vn6B8 */}
                             <div className='icon'>
                                 <FaEdit onClick={() => setEdit({id:todo.id, value: todo.text})}/>
                                 <FaTrashAlt onClick={() => removeTodo(todo.id)}/>

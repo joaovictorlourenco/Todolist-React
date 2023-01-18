@@ -21,6 +21,25 @@ export default function Home(){
 
   }
 
+  const completeTodo = (todoId) => {
+
+    const newTodos = todos.map(todo => {
+      if(todo.id === todoId){
+        return {
+
+          ...todo,
+          isCompleted: !task.isCompleted
+
+        }
+      }
+      return todo;
+    })
+
+    setTodos(newTodos);
+
+  }
+
+
   const updatedTodo = (todoId, newValue) => {
 
     if(!newValue.text || /^\s*$/.test(newValue.text)){
@@ -47,7 +66,7 @@ export default function Home(){
             </Title>
 
             <ListStyle>
-              <List todos={todos} removeTodo={removeTodo} updatedTodo={updatedTodo}/>
+              <List todos={todos} completeTodo={completeTodo} removeTodo={removeTodo} updatedTodo={updatedTodo}/>
             </ListStyle>
         </General>
     );
