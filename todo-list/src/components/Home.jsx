@@ -28,8 +28,8 @@ export default function Home(){
         return {
 
           ...todo,
-          isCompleted: !task.isCompleted
-
+          isCompleted: !todo.isCompleted
+    
         }
       }
       return todo;

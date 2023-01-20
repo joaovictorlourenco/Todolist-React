@@ -1,6 +1,11 @@
 import styled from "styled-components";
 
+export const LiGeneral = styled.li`
 
+
+    
+
+`;
 export const ListGeneral = styled.ul`
 
     .task-container-complete{
