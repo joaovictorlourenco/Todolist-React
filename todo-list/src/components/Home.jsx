@@ -17,7 +17,6 @@ export default function Home(){
     const newTodos = [todo, ...todos];
 
     setTodos(newTodos);
-    console.log(newTodos);
 
   }
 
@@ -62,7 +61,7 @@ export default function Home(){
         <General>
             <h2>My Tasks</h2>
             <Title>
-                <Form onSubmit={addTodo}/>
+                <Form placeholder="Nova Tarefa" textButton="Add" onSubmit={addTodo}/>
             </Title>
 
             <ListStyle>

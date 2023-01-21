@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { ListActions, ListStyle, EditForm, ListGeneral, LiGeneral} from '../styles/List'
+import { ListActions, ListStyle, EditForm, ListGeneral} from '../styles/List'
 import { FaTrashAlt, FaEdit } from "react-icons/fa";
+import { AiFillCheckCircle, AiOutlineCheckCircle } from "react-icons/ai"
 import Form from './Form';
 
 const List = ({todos, removeTodo, updatedTodo, completeTodo}) => {
@@ -31,7 +32,7 @@ const List = ({todos, removeTodo, updatedTodo, completeTodo}) => {
         return(
             <EditForm>
                 <h3>Modificando: {edit.value}</h3>
-                <Form edit={edit} onSubmit={submitUpdate} editButton={true} />
+                <Form placeholder={edit.value} textButton="Edit" edit={edit} onSubmit={submitUpdate} editButton={true} />
             </EditForm>
         )
 
@@ -41,16 +42,21 @@ const List = ({todos, removeTodo, updatedTodo, completeTodo}) => {
         <div key={index}>
             <ListGeneral>
                 <ListStyle>
-                { todo.isCompleted ? <LiGeneral> : <li> } 
-                        <p onClick={()=> completeTodo(todo.id)}>{todo.text}</p>
+                         {/* <label className="containerCheckbox" htmlFor="checkbox">
+                                <input  type="checkbox" name="checkbox" id="checkbox" />
+                            </label> */}
+                    <li> 
+                        <p onClick={()=> completeTodo(todo.id)}> 
+                            {todo.isCompleted ?<AiFillCheckCircle/> : <AiOutlineCheckCircle/> }
+                            {todo.text}
+                        </p>
                         <ListActions>
-                            {/* colocar um icon de completed usando a função todo.id https://www.youtube.com/watch?v=36a__1Vn6B8 */}
                             <div className='icon'>
                                 <FaEdit onClick={() => setEdit({id:todo.id, value: todo.text})}/>
                                 <FaTrashAlt onClick={() => removeTodo(todo.id)}/>
                             </div>
                         </ListActions>
-                { todo.isCompleted ? <LiGeneral/> : </li> } 
+                    </li> 
                 </ListStyle>
             </ListGeneral>
         </div>

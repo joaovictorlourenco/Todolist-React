@@ -34,8 +34,8 @@ function Form(props){
 return(
     <form onSubmit={handleSubmit}>
         <SubmitStyle edit={props.editButton}>     
-            <input placeholder="Adicione uma tarefa" type="text" value={input} onChange={handleChange} ref={inputRef} />
-            <button type="submit">ADD</button>
+            <input placeholder={props.placeholder} type="text" value={input} onChange={handleChange} ref={inputRef} />
+            <button type="submit">{props.textButton}</button>
         </SubmitStyle>
     </form>
 );
